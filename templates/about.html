@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"  dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Car Clinic: About Us</title>
+        <link rel="icon" href="/img/car.png" type="image/icon type">
+        <link rel="stylesheet" href="/css/about.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/service.css">
+<link rel="stylesheet" href="/css/header.css">
+<script src="https://kit.fontawesome.com/bad698ad11.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+  if(sessionStorage.getItem('token')==null || sessionStorage.getItem('token')=="null")
+  location.replace("http://localhost:3000/login")
+</script>
+    <nav>
+<div class="logo">
+    <div class="menu-icon"> 
+            <img src="/img/car.png" width="50" height="50" height="50" id="limg">
+            <div id="brand">Car Clinic</div>
+            <div id="list1">
+            <a href="http://localhost:3000/cart"><i class="fas fa-shopping-cart fa-2x" id="cart"></i><span class="badge" id="cartno">0</span></a>
+            </div>  
+               
+                  </div>
+       
+    </div>
+    <ul class="nav-links">
+       <li>
+        <a href="http://localhost:3000/home">Home</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/myorder">My Orders</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/vehicledisplay">My Vehicle</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/account">My Account</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/review">Reviews</a>
+    </li>
+    </li>
+    <li>
+            <a href="http://localhost:3000/contact/us">Contact Us</a>
+        </li>
+       <li>
+        <a href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+    </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+</nav>
+<br><br>
+        <div class="about-section">
+            <div class ="inner-width">
+                <h1>About us</h1>
+                <div class="border"></div>
+                <div class="about-section-row">
+                    <div class="about-section-col">
+                        <div class="about">
+                            <p>
+                                Hey!!!!<br>Welcome to Car Clinic.<br><br>This web application was created as an initiative to provide cushion to all you hard working people out there.We don't want you to waste your time.Why go to service stations and wait when we can make your job easy.<br>
+                            </p>
+                            <a href="http://localhost:3000/about1">Read More</a>
+                        </div>
+                    </div>
+                    <div class="about-section-col">
+                        <div class="skills">
+                            <div class="skill">
+                                <div class="title">Pravesh.S.Shetty</div>
+                                <div class="title">4NI17CS058</div>
+                                <div class="progress">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="title">Prashanth.N</div>
+                                <div class="title">4NI17CS057</div>
+                                <div class="progress">    
+                                    
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="title">Kokila B.V</div>
+                                <div class="title">4NI17CS030</div>
+                                <div class="progress">
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/header.js"></script>
+        <div class="modal" id="logoutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="yes">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">No</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<footer class="page-footer font-small blue" style="position: fixed;">
+
+    <div class="footer-copyright text-center py-3"  style="background-color:orange;color:white">© 2019 Copyright:CarClinic.com
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+    </body>
+    <script src="/js/cartno.js"></script>
+</html>

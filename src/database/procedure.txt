@@ -1,0 +1,54 @@
+delimiter //
+create procedure create_tables()
+begin
+create table if not exists Customer(Customer_ID int primary key auto_increment,First_Name varchar(50) not null,Last_Name varchar(50) not null,Address varchar(150) not null,Mob_No bigint not null unique,Email_ID varchar(50) not null unique,Password varchar(100) not null,Membership boolean default false,verified boolean default false,token varchar(300) unique);
+create table if not exists Order_Info(Order_ID int primary key auto_increment,Customer_ID int,Pickup_date date not null,Drop_off_date date not null,Service_ID int,foreign key(Customer_ID) references Customer(Customer_ID),foreign key(Service_ID) references Service_Replacement(Service_ID));
+create table if not exists Vehicle_Info(VIN varchar(50) primary key,Manufacturer varchar(50) not null,Colour varchar(20) not null,Car_Reg_No varchar(50) not null,Model year not null);
+create table if not exists Employee(Emp_ID int primary key auto_increment,Name varchar(50) not null,Mob_No bigint not null,Email_ID varchar(50) not null,Order_ID int,foreign key(Order_ID) references Order_Info(Order_ID));
+create table if not exists Payment(Order_ID int primary key,Mode varchar(20) default 'debit-card',Customer_ID int not null,Status varchar(20) default 'Unconfirmed',foreign key(Order_ID) references Order_Info(Order_ID),foreign key(Customer_ID) references Customer(Customer_ID));
+create table if not exists User_Mail(Mail_ID int primary key auto_increment,Customer_ID int not null,Description varchar(200) not null,foreign key(Customer_ID) references Customer(Customer_ID));
+end//
+delimiter ;
+
+delimiter //
+create trigger insert_into_user_mail 
+after
+insert
+on Vehicle_Info
+for each row 
+begin 
+insert into User_Mail(Customer_ID,Description) values(NEW.Customer_ID,'New Vehicle Added');
+end //
+
+delimiter //
+create trigger delete_from_user_mail
+after 
+delete
+on Vehicle_Info
+for each row
+begin
+insert into User_Mail(Customer_ID,Description) values(OLD.Customer_ID,'Vehicle Deleted From Account');
+end //
+
+view=customer_login
+index=customer_index
+
+delimiter //
+create trigger checkout 
+after insert on 
+Order_Info
+for each row
+begin
+delete from Cart where Service_ID=NEW.Service_ID;
+end //
+delimiter ;
+
+delimiter //
+create trigger default_date
+before insert on Review 
+for each row 
+if(isnull(new.Date)) then 
+set new.Date=curdate();
+end if;
+//
+delimiter ;

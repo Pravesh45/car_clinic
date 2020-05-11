@@ -1,0 +1,81 @@
+.image{
+    height:150px;
+    width:150px;
+    margin-top:35%;
+    margin-left: 15%;
+    border-radius: 5px;
+}
+#c{
+    font-size: 17px;
+}
+#s{
+    font-size: 17px;
+    margin-top:5px;
+}
+
+#name{
+    margin-top:12%;
+}
+
+#name,#c,#s{
+    margin-left:10%;
+}
+
+#list2{
+    margin-right:10px;
+    margin-top:5px;
+}
+#list2 a:hover{
+    text-decoration: none;
+    color:white;
+}
+.dropdown-toggle{
+    color:white;
+}
+.dropdown-item:hover{
+    background-color:rgba(0, 0, 0, 0.767);
+}
+
+#cart_subtotal{
+    color:green;
+    font-size:18px;
+    font-weight: bolder;
+}
+
+#button0,#button1,#button2,#button3,#button4,#button5,#button6,#button7,#button8,#button9,#button10,#button11,#button12,#button13{
+    width:80px;
+    margin-top:60px;
+}
+#checkout{
+    width:80px;
+    height:40px;
+    padding-top:7px;
+    font-weight: bolder;
+    margin-top:17px;
+    margin-left:35px;
+}
+#ohead{
+    margin-left:20px;
+}
+#empty{
+    color:red;
+    font-size:25px;
+    margin-left:480px;
+    margin-top:100px;
+}
+.row{
+    background-color: #eaeaea;
+    height:250px;
+    border-radius: 20px;
+    width:85%;
+    -webkit-box-shadow: 0 7px 4px #777;
+	-moz-box-shadow: 0 7px 4px #777;
+    box-shadow: 0 7px 10px #777;
+    margin-left: 9%;
+}
+#price{
+    margin-left:60%;
+    margin-top:38%;
+}
+
+

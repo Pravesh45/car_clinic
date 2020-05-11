@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Clinic: Contact Us</title>
+    <link rel="icon" href="/img/car.png" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="/css/contact.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/service.css">
+<link rel="stylesheet" href="/css/header.css">
+<script src="https://kit.fontawesome.com/bad698ad11.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<script>
+  if(sessionStorage.getItem('token')==null || sessionStorage.getItem('token')=="null")
+  location.replace("http://localhost:3000/login")
+</script>
+    <nav>
+<div class="logo">
+    <div class="menu-icon"> 
+            <img src="/img/car.png" width="50" height="50" height="50" id="limg">
+            <div id="brand">Car Clinic</div>
+            <div id="list1">
+            <a href="http://localhost:3000/cart"><i class="fas fa-shopping-cart fa-2x" id="cart"></i><span class="badge" id="cartno">0</span></a>
+            </div>  
+               
+                  </div>
+       
+    </div>
+     <ul class="nav-links">
+       <li>
+        <a href="http://localhost:3000/home">Home</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/myorder">My Orders</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/vehicledisplay">My Vehicle</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/account">My Account</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/review">Reviews</a>
+    </li>
+    </li>
+       <li>
+        <a href="http://localhost:3000/about">About Us</a>
+    </li>
+       <li>
+        <a href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+    </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+</nav>
+<br><br>
+<h2 id="cont">Contact Us</h2>
+			<ul id="anime">
+		<li>
+			<a href="https://www.facebook.com/Car-Clinic-106093550869955/?ti=as" target="_blank">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<i class="fab fa-facebook-f" aria-hidden="true"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a href="https://twitter.com/ar_linic?s=08" target="_blank">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<i class="fab fa-twitter" aria-hidden="true"></i>
+			</a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/invites/contact/?i=xgzlxf1khtz3&utm_content=bfusqa9" target="_blank">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<i class="fab fa-instagram" aria-hidden="true"></i>
+			</a>
+		</li>
+    </ul>
+    <footer class="page-footer font-small blue" style="position: fixed;">
+
+            <div class="footer-copyright text-center py-3"  style="background-color:orange;color:white">© 2019 Copyright:CarClinic.com
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
+<script src="/js/header.js"></script>
+<script src="/js/cartno.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+.image{
+    height:150px;
+    width:150px;
+    margin-top:20px;
+    margin-left:20px;
+    border-radius: 5px;
+}
+#c{
+    font-size: 17px;
+    margin-left:40px;
+}
+
+#name{
+    margin-left: 40px;
+    margin-top:20px;
+}
+
+#list2{
+    margin-right:10px;
+    margin-top:5px;
+}
+#list2 a:hover{
+    text-decoration: none;
+    color:white;
+}
+.dropdown-toggle{
+    color:white;
+}
+.dropdown-item:hover{
+    background-color:rgba(0, 0, 0, 0.767);
+}
+
+#cart_subtotal{
+    color:green;
+    font-size:18px;
+    font-weight: bolder;
+}
+
+#button0,#button1,#button2,#button3,#button4,#button5,#button6,#button7,#button8,#button9,#button10,#button11,#button12,#button13{
+    width:80px;
+    margin-top:70px;
+    margin-left:60px;
+}
+#checkout{
+    width:80px;
+    height:40px;
+    padding-top:7px;
+    font-weight: bolder;
+    margin-top:17px;
+    margin-left:68%;
+}
+#total{
+    margin-left: 55%;
+}
+#cart_total{
+    color:green;
+    font-weight: bolder;
+    font-size: 18px;
+}
+#sel1{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+#empty{
+    color:red;
+    font-size:25px;
+    margin-left:480px;
+    margin-top:100px;
+}
+#icon{
+    color:white;
+}
+#tyre{
+    margin-left:10%;
+    margin-top:3%;
+}
+.checkbox-inline{
+    margin-right:2%;
+}
+.row{
+    background-color: #eaeaea;
+    height:200px;
+    width:80%;
+    border-radius: 20px;
+    margin-left:6%;
+    -webkit-box-shadow: 0 7px 4px #777;
+	-moz-box-shadow: 0 7px 4px #777;
+    box-shadow: 0 7px 10px #777;
+}
+#last{
+    background-color: white;
+    box-shadow: none;
+}
+#price{
+    margin-top:20px;
+    margin-left:60px;
+}
+#chead{
+    margin-left:20px;
+}
+

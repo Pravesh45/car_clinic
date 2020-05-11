@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Clinic: Account</title>
+    <link rel="icon" href="/img/car.png" type="image/icon type">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/service.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<script src="https://kit.fontawesome.com/bad698ad11.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    .stars-outer {
+  position: relative;
+  display: inline-block;
+  left:300px;
+  top:10px;
+}
+.number-rating{
+    position:relative;
+    left:305px;
+    top:10px;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+
+#empty{
+    font-size:30px;
+    color:red;
+    text-align: center;
+    margin-top:30px;
+}
+.rev{
+    width: 1000px;
+    height:200px;
+    border-radius: 20px;;
+    background-color: #aaaaaa;
+    -webkit-box-shadow: 0 7px 4px #777;
+	-moz-box-shadow: 0 7px 4px #777;
+    box-shadow: 0 7px 10px #777;
+}
+.Reviewer{
+    margin-top:10px;
+    margin-left: 30px;
+    font-size:25px;
+}
+.review{
+    margin-top:20px;
+    margin-left:30px;
+    display: inline-block;
+}
+.date{
+    position:absolute ;
+    right:40px;
+    bottom:-50px;
+}
+#ar{
+    position:relative;
+    right:120px;
+    margin-bottom: 5%;
+}
+#rhead{
+  margin-left: 20px;
+}
+</style>
+<body>
+    <script>
+  if(sessionStorage.getItem('token')==null || sessionStorage.getItem('token')=="null")
+  location.replace("http://localhost:3000/login")
+</script>
+    <nav>
+<div class="logo">
+    <div class="menu-icon"> 
+            <img src="/img/car.png" width="50" height="50" height="50" id="limg">
+            <div id="brand">Car Clinic</div>
+            <div id="list1">
+            <a href="http://localhost:3000/cart"><i class="fas fa-shopping-cart fa-2x" id="cart"></i><span class="badge" id="cartno">0</span></a>
+            </div>  
+               
+                  </div>
+       
+    </div>
+     <ul class="nav-links">
+       <li>
+        <a href="http://localhost:3000/home">Home</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/myorder">My Orders</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/vehicledisplay">My Vehicle</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/account">My Account</a>
+    </li>
+      
+    </li>
+       <li>
+        <a href="http://localhost:3000/about">About Us</a>
+    </li>
+    <li>
+        <a href="http://localhost:3000/contact/us">Contact Us</a>
+    </li>
+       <li>
+        <a href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+    </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+</nav>
+<br><br>
+<h3 id="rhead">Reviews</h3><hr><br><br><br>
+<div class="container" id="bla">
+</div><br><br>
+<div class="modal" id="logoutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="yes">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">No</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<footer class="page-footer font-small blue" style="position: static;">
+
+    <div class="footer-copyright text-center py-3"  style="background-color:orange;color:white">© 2019 Copyright:CarClinic.com
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+<script src="/js/header.js"></script>
+<script src="/js/getReview.js"></script>
+<script src="/js/cartno.js"></script>
+</body>
+</html>

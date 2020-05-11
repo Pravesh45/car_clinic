@@ -1,0 +1,68 @@
+#prof
+{  
+	padding: 40px;
+	border: 1px;
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	background-color: #eaeaea;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 7px 4px #777;
+	-moz-box-shadow: 0 7px 4px #777;
+    box-shadow: 0 7px 10px #777;
+}
+#name{
+    margin-top:30px;
+    margin-left:30px;
+    font-weight:bold;
+    font-size: 30px;
+}
+#email{
+    margin-left:30px;
+    font-size:18px
+}
+#address{
+    margin-left:30px;
+    font-size:18px
+}
+#mob{
+    margin-left: 30px;
+    font-size:18px
+}
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .circular--landscape img {
+    width: auto;
+    height: 100%;
+    width:100%;
+    margin-left: 0px;
+  }
+
+  #edit{
+      width:170px;
+      background-color: orange;
+      margin:2px solid orange;
+      height:40px;
+      position: absolute;
+      top:84%;
+      left:75%
+  }
+
+  #del{
+    width:200px;
+    height:40px;
+    position: absolute;
+    top:84%;
+    left:60%
+  }
+
+  #mhead{
+      margin-left: 20px;
+  }

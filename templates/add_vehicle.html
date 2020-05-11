@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Car Clinic: Add Vehicle</title>
+    <link rel="icon" href="/img/car.png" type="image/icon type">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/service.css">
+<link rel="stylesheet" href="/css/header.css">
+<script src="https://kit.fontawesome.com/bad698ad11.js" crossorigin="anonymous"></script>
+</head>
+<style>
+.vehicle
+{   position: relative;
+	width: 40%;
+    left:27%;
+	padding: 40px;
+	border: 1px;
+	box-shadow: -10px 25px 50px rgba(0,0,0,.12);
+	text-align: center;
+	box-sizing: content-box;
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	background-color: #e1e1e1;
+	border-radius: 20px;
+}
+ input[type=text]{
+	display: inline-block;
+	align-items: center;
+	border: 2px solid #bbbb;
+	border-radius: 4px;
+	text-align: center;
+	height: 40px;
+	padding: 8px;
+	width: 50%;
+	margin:28px 0;
+	box-sizing: border-box;
+	transition: .3s;
+}
+.vehicle input[type=text].focus
+{
+	border-color: dodgerBlue;
+	box-shadow: 8px 0 8px 0 dodgerBlue;
+	border-radius: 4px;
+
+}
+.vehicle select {
+	display: inline-block;
+	align-items: center;
+	border: 2px solid #bbbb;
+	border-radius: 4px;
+	text-align: center;
+	height: 40px;
+	padding: 8px;
+	width: 50%;
+    background-color: white;
+	margin:28px 0;
+	box-sizing: border-box;
+	transition: .3s;
+	background-color: 
+
+}
+#model{
+    margin-right:20px;
+}
+#manu{
+    margin-right: 20px;
+}
+#submit{
+    width:300px;
+    margin-left:60px;
+}
+#upimg{
+    margin-right:70px;
+}
+#reg{
+    margin-right:110px;
+}
+#name{
+  margin-right:80px;
+}
+#color{
+  margin-right:20px;
+}
+</style>
+<body>
+    <script>
+  if(sessionStorage.getItem('token')==null || sessionStorage.getItem('token')=="null")
+  location.replace("http://localhost:3000/login")
+</script>
+    <nav>
+<div class="logo">
+    <div class="menu-icon"> 
+            <img src="/img/car.png" width="50" height="50" height="50" id="limg">
+            <div id="brand">Car Clinic</div>
+            <div id="list1">
+            <a href="http://localhost:3000/cart"><i class="fas fa-shopping-cart fa-2x" id="cart"></i><span class="badge" id="cartno">0</span></a>
+            </div>  
+               
+                  </div>
+       
+    </div>
+     <ul class="nav-links">
+       <li>
+        <a href="http://localhost:3000/home">Home</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/myorder">My Orders</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/vehicledisplay">My Vehicle</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/account">My Account</a>
+    </li>
+       <li>
+        <a href="http://localhost:3000/review">Reviews</a>
+    </li>
+    </li>
+       <li>
+        <a href="http://localhost:3000/about">About Us</a>
+    </li>
+    <li>
+        <a href="http://localhost:3000/contact/us">Contact Us</a>
+    </li>
+       <li>
+        <a href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+    </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+</nav>
+<br><br>
+<div class="vehicle">
+    <h3>
+        Vehicle Registration
+    </h3>
+            <form action="#">
+       <div>  
+        <br>
+        <label> VIN:</label>
+        <input type="text" name="Name"  placeholder="Enter your VIN" id="vin">
+       </div>
+       <br>
+       <div>
+            <label>Model Name:</label>
+        <input type="text" placeholder="Enter Name of the Car" id="name">
+       </div>
+       <br>
+       <div>
+            <label>Registration No:</label>
+        <input type="text" name="Car-Reg"  placeholder="Enter Registration Number" id="reg">
+       </div>
+       <br>
+       <div>
+            <label>Color:</label>
+        <input type="text" name="color"  placeholder="Enter the Color" id="color">
+       </div>
+       <br>
+       <div>
+            <label>Make:</label>
+          <select name="Manufacturer" id="manu" placeholder="Manufacturer">
+          <option value=""></option>
+          <option value="Maruthi Suzuki">Maruthi Suzuki</option>
+          <option value="Honda">Tata</option>
+          <option value="Hero">Hyundai</option>
+          <option value="Ford">Ford</option>
+          <option value="Renault">Renault</option>
+          <option value="Hundai">Mahindra</option>
+          <option value="">Honda</option>
+          <option value="Honda">Volkswagen</option>
+          <option value="Hero">Audi</option>
+          <option value="Maruthi Suzuki">Fiat</option>
+          <option value="Honda">Nissan</option>
+          <option value="Hero">Toyota</option>
+          <option value="Maruthi Suzuki">Datsun</option>
+          <option value="Honda">Volvo</option>
+          <option value="Hero">Skoda</option>
+          <option value="Maruthi Suzuki">Mitsubishi</option>
+          <option value="Honda">BMW</option>
+          <option value="Hero">Jeep</option>
+        </select>
+       </div>
+       <br>
+       <div>
+        <label>Model:</label> 
+          <select name="Model" id="model"> 
+           <option value=""></option>
+          <option value="1990">1990</option>
+          <option value="1991">1991</option>
+          <option value="1992">1992</option>
+          <option value="1993">1993</option>
+          <option value="1994">1994</option>
+          <option value="1995">1995</option>
+          <option value="1996">1996</option>
+          <option value="1997">1997</option>
+          <option value="1998">1998</option>
+          <option value="1999">1999</option>
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
+        </div>
+        <br>
+         <div id="upimg">
+         <label>Upload-Image:</label>
+         <input type="file" id="myFile">
+       </div>
+       <br>
+       <br>
+        <div>
+        <a href="#" class="btn btn-sm btn-success" role="button" id="submit">Submit</a>
+       </div>
+</form>
+</div>
+<div class="modal" id="logoutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="yes">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">No</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  const cl1=document.querySelector('#foot')
+  cl1.addEventListener('click',(e)=>{
+    e.preventDefault()
+    setTimeout(function(){
+     window.location.href="http://localhost:3000/vehicledisplay"
+    },1000)
+  })
+</script>
+<br><br>
+<footer class="page-footer font-small blue" style="position: static;">
+
+    <div class="footer-copyright text-center py-3"  style="background-color:orange;color:white">© 2019 Copyright:CarClinic.com
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+<script src="/js/header.js"></script>
+<script src="/js/add_vehicle.js"></script>
+<script src="/js/cartno.js"></script>
+</body>
+</html>
