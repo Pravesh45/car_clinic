@@ -9,9 +9,9 @@ create table if not exists Payment(Order_ID int primary key,Mode varchar(20) def
 create table if not exists User_Mail(Mail_ID int primary key auto_increment,Customer_ID int not null,Description varchar(200) not null,foreign key(Customer_ID) references Customer(Customer_ID));
 create table if not exists User_Image(Customer_ID int primary key,Name longblob not null,Type varchar(200
 ) not null,Size int,foreign key(Customer_ID) references Customer(Customer_ID));
-create table Review(Review_ID int primary key auto_increment,Reviewer varchar(100) not null,Review varchar(1000),Rating int not null);
-create table Service_Replacement(Service_ID int primary key auto_increment,Name varchar(50) not null,Cost int not null,Image varchar(100));
-create table Cart(Cart_ID int primary key auto_increment,Customer_ID int not null,Service_ID int not null,Qty int default 1,Total_Price int not null);
+create table if not exists Review(Review_ID int primary key auto_increment,Reviewer varchar(100) not null,Review varchar(1000),Rating int not null);
+create table if not exists Service_Replacement(Service_ID int primary key auto_increment,Name varchar(50) not null,Cost int not null,Image varchar(100));
+create table if not exists Cart(Cart_ID int primary key auto_increment,Customer_ID int not null,Service_ID int not null,Qty int default 1,Total_Price int not null);
 end//
 delimiter ;
 

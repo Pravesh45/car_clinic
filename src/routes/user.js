@@ -48,7 +48,7 @@ router.post('/user/register', [check('password').isLength({ min: 8 })], (req, re
                         if (result1.length == 0) {
                             const result2 = await db.query("insert into Customer(First_Name,Last_Name,Address,Mob_No,Email_ID,Password)      values ?", [values])
                             const result3 = await db.query("select * from Customer where Mob_No=?", user.Mob_No)
-                            const token = jwt.sign({ _id: result3[0].Customer_ID.toString() }, 'Rocky@4527', { expiresIn: "1d" })
+                            const token = jwt.sign({ _id: result3[0].Customer_ID.toString() }, 'rock', { expiresIn: "1d" })
                             welcomeMail(result3[0].Email_ID, result3[0].First_Name, token)
                             delete result3[0].Password
                             res.status(201).json({ message: "You have successfully registered" })
@@ -77,7 +77,7 @@ router.post('/user/register', [check('password').isLength({ min: 8 })], (req, re
 
 router.get('/user/verify/:token', async (req, res) => {
     try {
-        const decode = jwt.verify(req.params.token, 'Rocky@4527')
+        const decode = jwt.verify(req.params.token, 'rock')
         const db = helper.database(config)
         await helper.withTransaction(db, async () => {
             data = {
@@ -116,7 +116,7 @@ router.post('/user/login', (req, res) => {
                             res.send(res1[0])
                         }
                         else
-                            res.status(400).send({ "message": "Email or Password is Incorrect.Please try again..." })
+                            res.status(401).send({ "message": "Email or Password is Incorrect.Please try again..." })
                     }
             })
         } catch (err) {
