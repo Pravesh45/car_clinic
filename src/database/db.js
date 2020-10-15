@@ -1,65 +1,57 @@
-const mysql=require('mysql')
-const util=require('util')
-const config=require('../config/dbconfig')
+const mysql = require('mysql')
+const util = require('util')
+const config = require('../config/dbconfig')
 
-var con=mysql.createConnection(config)
+var con = mysql.createConnection(config)
 
-con.connect(((err)=>{
-    if(err)
-    throw err
-    console.log('Connected')
-    con.query('call create_tables()',(err,res)=>{
-        if(err)
+con.connect((err) => {
+    if (err)
         throw err
+    console.log('Connected')
+    con.query('call create_tables()', (err, res) => {
+        if (err)
+            throw err
         console.log('Tables created if not exists')
     })
     con.end()
-}))
+})
 
-function database(config)
-{
-    const connection=mysql.createConnection(config)
+function database(config) {
+    const connection = mysql.createConnection(config)
 
-    return{
-        async query(sql,args)
-        {
-            return util.promisify(connection.query).call(connection,sql,args)
+    return {
+        async query(sql, args) {
+            return util.promisify(connection.query).call(connection, sql, args)
         },
-        async close()
-        {
+        async close() {
             return util.promisify(connection.end).call(connection)
         },
-        async beginTransaction()
-        {
+        async beginTransaction() {
             return util.promisify(connection.beginTransaction).call(connection)
         },
-        async commit()
-        {
+        async commit() {
             return util.promisify(connection.commit).call(connection)
         },
-        async rollback()
-        {
+        async rollback() {
             return util.promisify(connection.rollback).call(connection)
         }
     }
 }
 
-async function withTransaction(db,callback){
-    try{
+async function withTransaction(db, callback) {
+    try {
         await db.beginTransaction()
         await callback()
         await db.commit()
     }
-    catch(err)
-    {
-       await db.rollback()
-       throw err;
+    catch (err) {
+        await db.rollback()
+        throw err;
     }
-    finally
-    {
+    finally {
         await db.close()
     }
 }
 
 
-module.exports={database:database,withTransaction:withTransaction}
+module.exports = { database: database, withTransaction: withTransaction }
