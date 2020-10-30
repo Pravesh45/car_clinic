@@ -9,7 +9,7 @@
 
 This is a web based application create to help customers to schedule a service for their cars or for replacement of any parts
 
-## Techonologies
+## Technologies
 
 The technologies used in this project are:
 * Nodejs
