@@ -20,7 +20,7 @@
     "ejs": "^3.1.5",
     "email-validator": "^2.0.4",
     "env-cmd": "^10.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "express-validator": "^6.6.1",
     "handlebars": "^4.7.6",
